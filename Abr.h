@@ -11,6 +11,7 @@ public:
 
 //Methods
   void assign(int ncle); 
+  void search(int ncle, Abr** p);
 
 //Contructeurs 
   Abr(int ncle);

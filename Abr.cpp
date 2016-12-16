@@ -9,12 +9,12 @@ int Abr::cle()
 
 Abr Abr::noeud_g()
 {
-  return noeud_g_;
+  return *noeud_g_;
 }
 
 Abr Abr::noeud_d()
 {
-  return noeud_d_;
+  return *noeud_d_;
 }
 
 
@@ -30,9 +30,9 @@ bool Abr::not_empty()
 {
   if (this->noeud_d_ != nullptr || this->noeud_g_ != nullptr)
   {
-    return TRUE;
+    return true;
   }
-  return FALSE;
+  return true;
 }
 
 

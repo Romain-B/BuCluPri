@@ -1,5 +1,5 @@
-#include <stdio>
-#include <stdlib>
+#include <stdio.h>
+#include <stdlib.h>
 
 class Abr
 {
@@ -12,6 +12,7 @@ public:
 //Methods
   void assign(int ncle); 
   bool not_empty();
+  //void remove(int rcle);
 
 //Contructeurs 
   Abr(int ncle);

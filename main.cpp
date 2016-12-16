@@ -2,6 +2,10 @@
 
 int main(int argc, char const *argv[])
 {
-  /* code */
+  
+  Abr mynoeud(12);
+
+  printf("\nICI : %d\n", mynoeud.cle() );
+
   return 0;
 }

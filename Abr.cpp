@@ -26,8 +26,15 @@ void Abr::assign(int ncle)
   //FAUDRA FAIRE...
 }
 
+bool Abr::not_empty()
+{
+  if (this->noeud_d_ != nullptr || this->noeud_g_ != nullptr)
+  {
+    return TRUE;
+  }
+  return FALSE;
+}
 
-//METHODS
 
 Abr::Abr(int ncle)
 {

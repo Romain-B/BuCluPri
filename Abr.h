@@ -11,6 +11,7 @@ public:
 
 //Methods
   void assign(int ncle); 
+  bool not_empty();
 
 //Contructeurs 
   Abr(int ncle);
@@ -23,3 +24,4 @@ private :
   Abr* noeud_d_;
   
 };
+

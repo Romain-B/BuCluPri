@@ -6,16 +6,16 @@ int main(int argc, char const *argv[])
   
   Abr mynoeud(4);
 
-  mynoeud.droit(5);
-  mynoeud.gauche(2);
+  mynoeud.assign(5);
+  mynoeud.assign(2);
 
   
   printf("\nICI AuSSI\n %d\n", mynoeud.noeud_g().cle());
 
-  mynoeud.noeud_g().droit(3);
+  mynoeud.noeud_g().assign(3);
   // g.gauche(1);
 
-  Abr* se = mynoeud.search(15) ;
+  Abr* se = mynoeud.search(2) ;
   if (se == nullptr)
   {
     printf("\nValeur existe pas\n");
@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
 
   else
   {
-    printf("\nICI : %d\n", (*se).cle()); //mynoeud.noeud_g().noeud_d().cle() );
+    printf("\nICI : %d\n", (*se).cle()); 
   }
 
 

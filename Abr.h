@@ -9,14 +9,11 @@ public:
   Abr& noeud_g();
   Abr& noeud_d();
 
-//Setters bien bien sale
-  void droit(int val);
-  void gauche(int val);
-
 
 //Methods
   void assign(int ncle); 
   bool not_empty();
+  int max();
   //void remove(int rcle);
 
   Abr* search(int ncle);
@@ -32,5 +29,9 @@ private :
   int cle_;
   Abr* noeud_g_;
   Abr* noeud_d_;
+
+  //Setters bien bien sale
+  void droit(int val);
+  void gauche(int val);
   
 };

@@ -35,13 +35,35 @@ void Abr::gauche(int val)
 
 //METHODS
 
-void Abr::assign(int ncle, Abr)
+void Abr::assign(int ncle)
 {
-  if (Abr==null)
-    return new Abr(null, ncle, null);
-  if (ncle < Abr.cle_){this->noeud_g_.assign(ncle, Abr);}
-  else if (ncle > Abr.cle_){this->noeud_d_.assign(ncle, Abr);}
-  return Abr
+
+  if (ncle < cle_)
+  {
+    if(noeud_g_ != nullptr)
+    {
+      noeud_g_->assign(ncle);
+    }
+    else 
+    {
+      this->gauche(ncle);
+      //printf("\n\nAssigned %d left of %d\n", ncle, cle_ );
+      
+    }
+  }
+  
+  else if (ncle > cle_)
+  {
+    if(noeud_d_ != nullptr)
+    {
+      noeud_d_->assign(ncle);
+    }
+    else 
+    {
+      this->droit(ncle);
+      //printf("\n\nAssigned %d right of %d\n", ncle, cle_ );
+    }
+  }
 }
 
 
@@ -72,17 +94,29 @@ Abr* Abr::search(int ncle)
 
 int Abr::max()
 {
-  if (this->noeud_d_ != nullptr){this->noeud_d_.max();}
-  return cle;
+  int mx;
+
+  if (noeud_d_ != nullptr)
+  {
+      mx = noeud_d_->max();
+  }
+  else
+  {
+    return cle_;
+  }
+  return mx;
+
+}
+
   
 
 
 
 bool Abr::not_empty()
 {
-  if (noeud_d_ != nullptr || noeud_g_ != nullptr)
+  if (noeud_d_ == nullptr && noeud_g_ == nullptr)
   {
-    return true;
+    return false;
   }
   return true;
 }

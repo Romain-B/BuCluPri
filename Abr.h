@@ -14,6 +14,8 @@ public:
   bool not_empty();
   //void remove(int rcle);
 
+  void search(int ncle, Abr** p);
+
 //Contructeurs 
   Abr(int ncle);
   //~Abr(); A FAIRE PLUS TARD
@@ -25,4 +27,3 @@ private :
   Abr* noeud_d_;
   
 };
-

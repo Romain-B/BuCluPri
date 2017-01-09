@@ -26,6 +26,22 @@ void Abr::assign(int ncle)
   //FAUDRA FAIRE...
 }
 
+
+void Abr::search(int ncle, Abr** p)
+{
+		if (ncle < this->cle_){
+			if (this->noeud_g_ != nullptr){this->noeud_g_.search(ncle, *p);}
+		}
+		
+		if (ncle > this->cle_){
+			if (this->noeud_d_ != nullptr){this->noeud_d_.search(ncle, *p);}
+		}
+
+		if (ncle == this->cle_){
+			*p = &this;}
+}
+
+
 bool Abr::not_empty()
 {
   if (this->noeud_d_ != nullptr || this->noeud_g_ != nullptr)
@@ -43,6 +59,8 @@ Abr::Abr(int ncle)
   noeud_d_ = nullptr;
   noeud_g_ = nullptr;
 }
+
+
 
 
 //Abr::~Abr() // A FAIRE PLUS TARD

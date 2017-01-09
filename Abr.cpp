@@ -41,6 +41,13 @@ void Abr::search(int ncle, Abr** p)
 			*p = &this;}
 }
 
+int Abr::max()
+{
+  if (this->noeud_d_ != nullptr){this->noeud_d_.max();}
+  return cle
+
+
+
 
 bool Abr::not_empty()
 {

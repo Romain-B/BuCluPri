@@ -44,7 +44,7 @@ void Abr::search(int ncle, Abr** p)
 int Abr::max()
 {
   if (this->noeud_d_ != nullptr){this->noeud_d_.max();}
-  return cle
+  return cle;
 
 
 

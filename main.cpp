@@ -26,8 +26,10 @@ int main(int argc, char const *argv[])
     printf("\nICI : %d\n", (*se).cle()); 
   }
 
+  //Test max
+  printf("\nValeur max de mynoeud : %d \n", mynoeud.max());
 
-  
+
 
   return 0;
 }

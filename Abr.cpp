@@ -20,10 +20,13 @@ Abr Abr::noeud_d()
 
 //METHODS
 
-void Abr::assign(int ncle)
+void Abr::assign(int ncle, Abr)
 {
-  int i = 0;
-  //FAUDRA FAIRE...
+  if (Abr==null)
+    return new Abr(null, ncle, null);
+  if (ncle < Abr.cle_){this->noeud_g_.assign(ncle, Abr);}
+  else if (ncle > Abr.cle_){this->noeud_d_.assign(ncle, Abr);}
+  return Abr
 }
 
 
@@ -45,7 +48,7 @@ int Abr::max()
 {
   if (this->noeud_d_ != nullptr){this->noeud_d_.max();}
   return cle;
-
+  
 
 
 

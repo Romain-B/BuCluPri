@@ -9,12 +9,12 @@ int Abr::cle()
 
 Abr Abr::noeud_g()
 {
-  return noeud_g_;
+  return *noeud_g_;
 }
 
 Abr Abr::noeud_d()
 {
-  return noeud_d_;
+  return *noeud_d_;
 }
 
 
@@ -25,6 +25,7 @@ void Abr::assign(int ncle)
   int i = 0;
   //FAUDRA FAIRE...
 }
+
 
 void Abr::search(int ncle, Abr** p)
 {
@@ -38,6 +39,16 @@ void Abr::search(int ncle, Abr** p)
 
 		if (ncle == this->cle_){
 			*p = &this;}
+}
+
+
+bool Abr::not_empty()
+{
+  if (this->noeud_d_ != nullptr || this->noeud_g_ != nullptr)
+  {
+    return true;
+  }
+  return true;
 }
 
 

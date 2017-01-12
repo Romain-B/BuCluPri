@@ -19,6 +19,7 @@ public:
   Abr* search(int ncle);
 
 //Contructeurs 
+  Abr();
   Abr(int ncle);
   Abr(const Abr&);
 
@@ -26,7 +27,7 @@ public:
 
 protected:
 private :
-  int cle_;
+  int* cle_;
   Abr* noeud_g_;
   Abr* noeud_d_;
 

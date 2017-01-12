@@ -4,7 +4,7 @@
 
 int Abr::cle()
 {
-  return cle_;
+  return *cle_;
 }  
 
 Abr& Abr::noeud_g()
@@ -38,7 +38,7 @@ void Abr::gauche(int val)
 void Abr::assign(int ncle)
 {
 
-  if (ncle < cle_)
+  if (ncle < *cle_)
   {
     if(noeud_g_ != nullptr)
     {
@@ -52,7 +52,7 @@ void Abr::assign(int ncle)
     }
   }
   
-  else if (ncle > cle_)
+  else if (ncle > *cle_)
   {
     if(noeud_d_ != nullptr)
     {
@@ -71,21 +71,21 @@ Abr* Abr::search(int ncle)
 {
 		Abr* p_res = nullptr;
 
-    if (ncle < cle_){
+    if (ncle < *cle_){
 			if (noeud_g_ != nullptr)
         {
           p_res = noeud_g_->search(ncle);
         }
 		}
 		
-		if (ncle > cle_){
+		if (ncle > *cle_){
 			if (noeud_d_ != nullptr)
         {
           p_res = noeud_d_->search(ncle);
         }
 		}
 
-		if (ncle == cle_)
+		if (ncle == *cle_)
     {
 			p_res = new Abr(*this);
     }
@@ -102,7 +102,7 @@ int Abr::max()
   }
   else
   {
-    return cle_;
+    return *cle_;
   }
   return mx;
 
@@ -125,9 +125,17 @@ bool Abr::not_empty()
 
 //CONSTRUCTEUR
 
+Abr::Abr()
+{
+  cle_ = nullptr;
+
+  noeud_d_ = nullptr;
+  noeud_g_ = nullptr;
+}
+
 Abr::Abr(int ncle)
 {
-  cle_ = ncle;
+  cle_ = new int(ncle);
 
   noeud_d_ = nullptr;
   noeud_g_ = nullptr;
@@ -135,7 +143,7 @@ Abr::Abr(int ncle)
 
 Abr::Abr(const Abr &cp)
 {
-  cle_ = cp.cle_;
+  cle_ = new int(*(cp.cle_));
 
   noeud_d_ = cp.noeud_d_;
   noeud_g_ = cp.noeud_g_;

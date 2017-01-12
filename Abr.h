@@ -17,6 +17,7 @@ public:
   //void remove(int rcle);
 
   Abr* search(int ncle);
+  int* depth(int dep[]);
 
 //Contructeurs 
   Abr();

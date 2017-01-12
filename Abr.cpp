@@ -46,9 +46,7 @@ void Abr::assign(int ncle)
     }
     else 
     {
-      this->gauche(ncle);
-      //printf("\n\nAssigned %d left of %d\n", ncle, cle_ );
-      
+      this->gauche(ncle);      
     }
   }
   
@@ -61,9 +59,35 @@ void Abr::assign(int ncle)
     else 
     {
       this->droit(ncle);
-      //printf("\n\nAssigned %d right of %d\n", ncle, cle_ );
     }
   }
+}
+
+
+int* Abr::depth(int dep[])
+{
+  //dep[0] = curr dep
+  //dep[1] = max dep
+
+  int* res;
+
+  if (dep[0] >= dep[1])
+  {
+    dep[1] = dep[0];
+  }
+
+  if (noeud_g_ != nullptr)
+  {
+    int tmp[2] = {dep[0]+1, dep[1]};
+    res = (*noeud_g_).depth(tmp);
+  }
+  if (noeud_d_ != nullptr)
+  {
+    int tmp[2] = {dep[0]+1, dep[1]};
+    res = (*noeud_d_).depth(tmp);
+  }
+  return res;
+
 }
 
 

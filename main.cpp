@@ -30,6 +30,15 @@ int main(int argc, char const *argv[])
   printf("\nValeur max de mynoeud : %d \n", mynoeud.max());
 
 
+  //Test de depth
+
+  Abr tree(2);
+  tree.assign(3);
+  tree.assign(4);
+  tree.assign(5);
+  tree.assign(6);
+
+  printf("\n La profondeur de tree est : %d \n", tree.depth());
 
   return 0;
 }

@@ -64,12 +64,32 @@ void Abr::assign(int ncle)
 }
 
 
-int* Abr::depth(int dep[])
-{
-  //dep[0] = curr dep
-  //dep[1] = max dep
 
+int Abr::depth()
+{
+  /*
+  Wrapper for depth_ function for easier use.
+  As a result, depth_ is set as private.
+  */
+
+  int dep[2] = {0,0};
   int* res;
+
+  res = this->depth_(dep);
+
+  return res[1];
+}
+
+
+
+int* Abr::depth_(int dep[])
+{
+  /*
+  Returns array with depth[1] as the max depth.
+
+  dep[0] = curr dep
+  dep[1] = max dep
+  */
 
   if (dep[0] >= dep[1])
   {
@@ -78,15 +98,17 @@ int* Abr::depth(int dep[])
 
   if (noeud_g_ != nullptr)
   {
-    int tmp[2] = {dep[0]+1, dep[1]};
-    res = (*noeud_g_).depth(tmp);
+    ++ dep[0];
+    //int tmp[2] = {dep[0]+1, dep[1]};
+    dep = (*noeud_g_).depth_(dep);
   }
   if (noeud_d_ != nullptr)
   {
-    int tmp[2] = {dep[0]+1, dep[1]};
-    res = (*noeud_d_).depth(tmp);
+    ++ dep[0];
+    //int tmp[2] = {dep[0]+1, dep[1]};
+    dep = (*noeud_d_).depth_(dep);
   }
-  return res;
+  return dep;
 
 }
 

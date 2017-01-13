@@ -17,7 +17,7 @@ public:
   //void remove(int rcle);
 
   Abr* search(int ncle);
-  int* depth(int dep[]);
+  int depth();
 
 //Contructeurs 
   Abr();
@@ -32,7 +32,9 @@ private :
   Abr* noeud_g_;
   Abr* noeud_d_;
 
-  //Setters bien bien sale
+  int* depth_(int dep[]);
+
+  //Setters 
   void droit(int val);
   void gauche(int val);
   

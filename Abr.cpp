@@ -168,6 +168,15 @@ int Abr::max()
 
 bool Abr::is_empty()
 {
+  if (cle_ == nullptr)
+  {
+    return true;
+  }
+  return false;
+}
+
+bool Abr::is_childless()
+{
   if (noeud_d_ == nullptr && noeud_g_ == nullptr)
   {
     return true;

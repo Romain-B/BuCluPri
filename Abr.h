@@ -12,7 +12,9 @@ public:
 
 //Methods
   void assign(int ncle); 
+
   bool is_empty();
+  bool is_childless();
   int max();
   //void remove(int rcle);
 

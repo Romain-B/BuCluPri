@@ -162,7 +162,21 @@ int Abr::max()
 
 }
 
-  
+int Abr::min()
+{
+  int mn;
+
+  if (noeud_g_ != nullptr)
+  {
+      mn = noeud_g_->min();
+  }
+  else
+  {
+    return *cle_;
+  }
+  return mn;
+
+}  
 
 
 

@@ -15,7 +15,9 @@ public:
 
   bool is_empty();
   bool is_childless();
+  
   int max();
+  int min();
   //void remove(int rcle);
 
   Abr* search(int ncle);

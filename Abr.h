@@ -12,7 +12,7 @@ public:
 
 //Methods
   void assign(int ncle); 
-  bool not_empty();
+  bool is_empty();
   int max();
   //void remove(int rcle);
 

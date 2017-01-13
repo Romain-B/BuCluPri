@@ -38,28 +38,36 @@ void Abr::gauche(int val)
 void Abr::assign(int ncle)
 {
 
-  if (ncle < *cle_)
+  if (cle_ != nullptr)
   {
-    if(noeud_g_ != nullptr)
+
+    if (ncle < *cle_)
     {
-      noeud_g_->assign(ncle);
+      if(noeud_g_ != nullptr)
+      {
+        noeud_g_->assign(ncle);
+      }
+      else 
+      {
+        this->gauche(ncle);      
+      }
     }
-    else 
+    
+    else if (ncle > *cle_)
     {
-      this->gauche(ncle);      
+      if(noeud_d_ != nullptr)
+      {
+        noeud_d_->assign(ncle);
+      }
+      else 
+      {
+        this->droit(ncle);
+      }
     }
   }
-  
-  else if (ncle > *cle_)
+  else
   {
-    if(noeud_d_ != nullptr)
-    {
-      noeud_d_->assign(ncle);
-    }
-    else 
-    {
-      this->droit(ncle);
-    }
+    cle_ = new int(ncle);
   }
 }
 
@@ -158,13 +166,13 @@ int Abr::max()
 
 
 
-bool Abr::not_empty()
+bool Abr::is_empty()
 {
   if (noeud_d_ == nullptr && noeud_g_ == nullptr)
   {
-    return false;
+    return true;
   }
-  return true;
+  return false;
 }
 
 
